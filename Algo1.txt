@@ -1,0 +1,223 @@
+Algorithme Max(Nombre1,Nombre2:entier)
+    Resultat <-- 0
+    Si Nombre1 > Nombre2 Alors
+        Resultat <-- Nombre1
+    Sinonsi Nombre2 > Nombre1
+        Resultat <-- Nombre2
+    Sinon
+        Ecrire("Les deux nombres sont egaux")
+    Finsi
+
+    //Ecrire("Les plus grand nombre est", Resultat)
+    Retourner Resultat
+FIN
+
+B <-- 5, C <-- 10
+Max(B,C)
+
+Algorithme AppelMax()
+    N,L : entier
+    Lire N
+    Lire L
+    Ecrire Max(N,L)
+FIN
+
+//Valeur Absolue
+
+Algorithme ValeurAbsolu(nombre:Entier)
+    valeur:entier
+    Lire nombre
+    Si nombre > 0 Alors
+        valeur = nombre
+        Retourner valeur
+    Sinonsi nombre < 0 Alors
+        valeur = nombre * (-1)
+        Retourner valeur
+    Sinon
+        Retourner "Valeur Nulle"
+    Finsi
+Fin
+
+VARIABLE STRUCTURE
+
+Algorithme Adresse
+    type adresse
+        rue: chaine
+        NumeroMaison: entier
+        codePostal: entier
+        ville: chaine
+        pays: chaine
+
+    adresse.rue <-- "Palmier"
+    adresse.NumeroMaison <-- 100
+    adresse.ville <-- "Paris"
+    adresse.codePostal <-- 705458
+    adresse.pays <-- "France"
+
+    Ecrire (adresse)
+
+Algorithme Temps (moment)
+     type moment
+        heure: entier
+        Munite : entier
+        Seconde : entier
+    Cpt : entier 
+    Cpt <-- 1 
+   Retourner moment.Seconde + Cpt
+
+Algorithme AppelTemps(13,20,21)
+
+//BOUCLE POUR ET TANTQUE
+i <-- 1
+tant que i ≤ 10 faire 
+    écrire i
+    i <-- i + 1
+fin tant
+
+algorithme nombreDeCinq
+    nombre, cpt, chiffre : entier
+    cpt <-- 0
+    lire nombre
+    tant que nombre ≠ 0 faire
+        chiffre  nombre MOD 10
+        si chiffre = 5 alors
+            cpt <-- cpt + 1 
+        fin si
+        nombre <-- nombre DIV 10
+    fin tant
+    écrire « Le nombre de 5 est », cpt
+fin
+
+Algorithme Decroissant
+    pour i de 10 a 1 par -1
+        Ecrire i
+    FinPour 
+Fin
+
+Algorithme DecroissantTantQue
+    cpt : entier
+    cpt = 10
+    Tantque cpt >=1 faire
+        Ecrire i
+        cpt = cpt - 1
+    FinPour 
+Fin
+
+Algorithme AffichierEntier
+    i : entier
+    pour i de 1 a 100 faire
+        si i MOD 10 = 1 Alors
+            Ecrire i
+        Finsi
+    FinPour
+Fin
+
+Tableau[5] = [1,2,4,3,5]
+ indice 4     0 1 2 3 4
+
+ Nombre : Tableau de 10 entier
+
+ Algorithme Note
+    tab : Tableau de 20 entier
+    i, note : entier
+    pour i de 0 a 19 faire
+        lire note
+        Ecrire tab[i] <-- note
+    FinPour
+Fin
+
+ Algorithme SommeTableau(tab: Tableau des entiers)
+    i, note, somme : entier
+    somme <-- 0
+    pour i de 0 a 19 faire
+        lire note
+        Ecrire tab[i] <-- note
+        somme = somme + tab[i]
+    FinPour
+Fin
+
+14. Algorithme DecaleElement(Tab: Tableau entier)
+    
+    DernierElment <-- tab[taille(tab)-1]
+    Pour i de taille(tab)-1 a 1 faire
+        tab[i] <-- tab[i-1]
+    FinPour    
+    tab[0] <-- DernierElment
+
+tab = [4 , 6, 7, 18, 25, 6, 8, 13, 2, 9]
+indice 0   1   2  3   4   5  6  7  8  9
+
+##Tour 1
+i = 9
+tab[9] = tab[9-1] = 2
+##Tour 2
+i = 8 
+Tab[8]= tab[8-1] = 13
+##Tour 3 
+i = 7
+Tab[7] = Tab[7-1] = 8
+##Tour 4
+i = 6
+Tab[6] = Tab[6-1] = 6
+##Tour 5
+i = 5
+Tab[5] = Tab[5-1] = 25
+##Tour 4
+i = 4
+Tab[4] = Tab[4-1] = 18
+##Tour 3
+i = 3
+Tab[3] = Tab[3-1] = 7
+##Tour 2
+i = 2
+Tab[2] = Tab[2-1] = 6
+##Tour 1
+i = 1
+Tab[1] = Tab[1-1] = 4
+
+Tab[0]<-- DernierElment
+
+Algorithme Commune(commune,nomCommune)
+    type commune 
+        code : entier 
+        nom : chaîne 
+    fin type
+
+    Pour communeRecherche dans commune faire
+        Si communeRecherche.nom = nomCommune
+            Retourner communeRecherche.code
+        Finsi
+    FinPour
+    Retourner "Commune n'existe pas"
+fin
+
+Algorithme Renverser(tab:Tableau des entiers)
+    i, longueurTab ,temp : entier
+    longueurTab = taille(tab)
+    pour i de 0 a longueurTab //2 faire
+        temp = tab[i]
+        tab[i]=tab[longueurTab-i-1]
+        tab[longueurTab-i-1] = temp
+    FinPour
+    Retourner tab
+FIN
+
+Algorithme Occurrence(nombre:entier)
+    Occurrences: Tableau des entiers
+    Nombrechaine: chaine
+    chiffre : entier
+    
+    Occurrences <--Tableau[10]
+    Nombrechaine<--Convertir_en_chaîne(nombre)
+
+    Pour NombreTrouver dans Nombrechaine faire
+        chiffre<--Convertir_en_chaîne(NombreTrouver)
+        Occurrences[chiffre]<--Occurrences[chiffre]+1
+    FinPour
+
+    Pour i de 0 a 9 faire
+        Si Occurrences[i] > 0 alors
+            Ecrire i,"apparait", Occurrences[i],"fois"
+        Finsi
+    FinPour
+Fin
